@@ -39,7 +39,7 @@
 body{
 	font-family: Arial,Geneva;
 	background-color: #ffffff;
-	color: #0000a0;
+	color: #000080;
 	background-image: url(background.gif); 
 	margin-right: 5%;
 	margin-left: 5%;
@@ -54,7 +54,7 @@ p{
 
 table,div,span,td{
 	font-size: 100%;
-	color: #0000a0;
+	color: #000080;
 }
 
 div.Titles{
@@ -83,11 +83,11 @@ div.StdDiv{
 	background-color: #ffffff;
 	text-align: center;
 	font-size: 100%;
-	color: #0000a0;
+	color: #000080;
 	padding: 0.5em;
 	border-style: solid;
 	border-width: 1px 1px 1px 1px;
-	border-color: #0000a0;
+	border-color: #000080;
 	margin-bottom: 1px;
 }
 
@@ -157,14 +157,14 @@ div.ExerciseText{
 
 .LeftItem{
 	font-size: 100%;
-	color: #0000a0;
+	color: #000080;
 	text-align: left;
 }
 
 .RightItem{
 	font-weight: bold;
 	font-size: 100%;
-	color: #0000a0;
+	color: #000080;
 }
 
 span.CorrectMark{
@@ -200,14 +200,14 @@ div.Feedback {
 
 
 div.ExerciseDiv{
-	color: #0000a0;
+	color: #000080;
 }
 
 /* JMatch flashcard styles */
 table.FlashcardTable{
 	background-color: transparent;
-	color: #0000a0;
-	border-color: #0000a0;
+	color: #000080;
+	border-color: #000080;
 	margin-left: 5%;
 	margin-right: 5%;
 	margin-top: 2em;
@@ -234,7 +234,7 @@ table.FlashcardTable td.Showing{
 	margin: 0px;
 	border-style: solid;
 	border-width: 1px;
-	color: #0000a0;
+	color: #000080;
 	background-color: #ffffff;
 }
 
@@ -253,7 +253,7 @@ a.ExSegment{
 	font-size: 120%;
 	font-weight: bold;
 	text-decoration: none;
-	color: #0000a0;
+	color: #000080;
 }
 
 span.RemainingWordList{
@@ -476,7 +476,7 @@ div.ShortAnswer{
 	border-top-color: #ffffff;
 	border-right-color: #7f7f7f;
 	border-bottom-color: #7f7f7f;
-	color: #0000a0;
+	color: #000080;
 	background-color: #ffffff;
 
 	border-width: 2px;
@@ -494,7 +494,7 @@ div.ShortAnswer{
 	border-right-color: #7f7f7f;
 	border-bottom-color: #7f7f7f;
 
-	background-color: #0000a0;
+	background-color: #000080;
 	color: #ffffff;
 	border-width: 2px;
 	padding: 3px 6px 3px 6px;
@@ -510,7 +510,7 @@ div.ShortAnswer{
 	border-top-color: #7f7f7f;
 	border-right-color: #ffffff;
 	border-bottom-color: #ffffff;
-	background-color: #0000a0;
+	background-color: #000080;
 	color: #ffffff;
 
 	border-width: 2px;
@@ -591,7 +591,7 @@ div.CardStyle {
 	padding: 5px;
 	border-style: solid;
 	border-width: 1px;
-	color: #0000a0;
+	color: #000080;
 	background-color: #ffffff;
 	left: -50px;
 	top: -50px;
@@ -605,24 +605,8 @@ div.CardStyle {
 
 
 .auto-style1 {
-	font-size: 140%;
-	color: #F31515;
-}
-.auto-style2 {
 	font-size: x-large;
-	color: #0000FF;
-}
-.auto-style3 {
-	border-left: 2px solid #ffffff;
-	border-right: 2px solid #7f7f7f;
-	border-top: 2px solid #ffffff;
-	border-bottom: 2px solid #7f7f7f;
-	text-align: center;
-	color: #0000a0;
-	background-color: #ffffff;
-	padding: 3px 6px 3px 6px;
-	cursor: pointer;
-	font-size: medium;
+	color: #FF0000;
 }
 
 
@@ -1363,8 +1347,6 @@ function StartUp(){
 
 	
 
-	GetUserName();
-
 	
 
 	
@@ -1687,8 +1669,6 @@ function CheckFinished(){
 		Locked = true;
 		
 
-		setTimeout('SendResults(' + Score + ')', 50);
-
 
 		Finished = true;
 		Detail = '<?xml version="1.0"?><hpnetresult><fields>';
@@ -1711,61 +1691,6 @@ function CheckFinished(){
 
 
 
-
-
-
-
-//CODE FOR HANDLING SENDING OF RESULTS
-
-var UserName = '';
-var StartTime = (new Date()).toLocaleString();
-
-var ResultForm = '<html><body><form name="Results" action="" method="post" enctype="x-www-form-encoded">';
-ResultForm += '<input type="hidden" name="recipient" value="gamalasker@gmail.com"></input>';
-ResultForm += '<input type="hidden" name="subject" value="&#x00E9;coute puis choisis la bonne r&#x00E9;ponse"></input>';
-ResultForm += '<input type="hidden" name="Exercise" value="&#x00E9;coute puis choisis la bonne r&#x00E9;ponse"></input>';
-ResultForm += '<input type="hidden" name="realname" value=""></input>';
-ResultForm += '<input type="hidden" name="Score" value=""></input>';
-ResultForm += '<input type="hidden" name="Start_Time" value=""></input>';
-ResultForm += '<input type="hidden" name="End_Time" value=""></input>';
-ResultForm += '<input type="hidden" name="title" value="Thanks!"></input>';
-ResultForm += '<input type="hidden" name="bgcolor" value="#ffffff"></input>';
-ResultForm += '<input type="hidden" name="text_color" value="#000066"></input>';
-ResultForm += '<input type="hidden" name="sort" value="order:realname,Exercise,Score,Start_Time,End_Time"></input>';
-ResultForm += '</form></body></html>';
-
-function GetUserName(){
-	UserName = prompt('\u00E9cris ton nom s\\\'il te plait:','');
-	UserName += '';
-	if ((UserName.substring(0,4) == 'null')||(UserName.length < 1)){
-		UserName = prompt('\u00E9cris ton nom s\\\'il te plait:','');
-		UserName += '';
-		if ((UserName.substring(0,4) == 'null')||(UserName.length < 1)){
-			history.back();
-		}
-	}
-}
-
-function SendResults(Score){
-	var today = new Date;
-	var NewName = '' + today.getTime();
-      var NewWin = window.open('', NewName, 'toolbar=no,location=no,directories=no,status=no, menubar=no,scrollbars=yes,resizable=no,,width=400,height=300');
-
-//If user has prevented popups, no way to proceed -- exit
-	if (NewWin == null){
-		return;
-	}
-
-	NewWin.document.clear();
-	NewWin.document.open();
-	NewWin.document.write(ResultForm);
-	NewWin.document.close();
-	NewWin.document.Results.Score.value = Score + '%';
-	NewWin.document.Results.realname.value = UserName;
-	NewWin.document.Results.End_Time.value = (new Date()).toLocaleString();
-	NewWin.document.Results.Start_Time.value = StartTime;
-	NewWin.document.Results.submit();
-}
 
 
 
@@ -1802,11 +1727,9 @@ function SendResults(Score){
 <!-- EndTopNavButtons -->
 
 <div class="Titles">
-	<h2 class="auto-style1">&#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584; &#1580;&#1605;&#1575;&#1604; &#1593;&#1587;&#1603;&#1585;&nbsp; &#1610;&#1578;&#1605;&#1606;&#1609; &#1575;&#1606; &#1578;&#1581;&#1601;&#1592;&#1608;&#1575; &#1575;&#1604;&#1575;&#1601;&#1593;&#1575;&#1604; &#1575;&#1608;&#1604;&#1575; 
-	&#1579;&#1605; &#1578;&#1580;&#1610;&#1576;&#1608;&#1575; &#1593;&#1604;&#1609; &#1575;&#1604;&#1575;&#1587;&#1574;&#1604;&#1607; &#1575;&#1604;&#1578;&#1575;&#1604;&#1610;&#1607;</h2>
-	<h2 class="auto-style1">&#x00E9;coute puis choisis la bonne r&#x00E9;ponse</h2>
+	<h2 class="ExerciseTitle">&#x00E9;coute puis choisis la bonne r&#x00E9;ponse</h2>
 
-	<h3 class="auto-style2">&#1575;&#1587;&#1578;&#1605;&#1593; &#1604;&#1604;&#1589;&#1608;&#1578; &#1579;&#1605; &#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1575;&#1580;&#1575;&#1576;&#1607; &#1575;&#1604;&#1589;&#1581;&#1610;&#1581;&#1607;</h3>
+	<h3 class="auto-style1">&#1575;&#1587;&#1578;&#1605;&#1607; &#1604;&#1604;&#1589;&#1608;&#1578; &#1579;&#1605; &#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1575;&#1580;&#1575;&#1576;&#1607; &#1575;&#1604;&#1589;&#1581;&#1610;&#1581;&#1607;</h3>
 
 
 
@@ -1824,17 +1747,15 @@ function SendResults(Score){
 <div id="QNav" class="QuestionNavigation">
 
 <p style="text-align: right;">
-<button id="ShowMethodButton" class="auto-style3" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="ShowHideQuestions(); return false;" style="width: 241px; height: 25px">Afficher toutes les questions</button>
+<button id="ShowMethodButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="ShowHideQuestions(); return false;">Afficher toutes les questions</button>
 </p>
 
 <div id="OneByOneReadout">
-<button id="PrevQButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="ChangeQ(-1); return false;">
-&#1575;&#1604;&#1587;&#1575;&#1576;&#1602;</button>
+<button id="PrevQButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="ChangeQ(-1); return false;">&lt;=</button>
 
 <span id="QNumReadout" class="QNum">&nbsp;</span>
 
-<button id="NextQButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="ChangeQ(1); return false;">
-&#1575;&#1604;&#1578;&#1575;&#1604;&#1609;</button>
+<button id="NextQButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOver(this)" onclick="ChangeQ(1); return false;">=&gt;</button>
 <br />
 </div>
 
